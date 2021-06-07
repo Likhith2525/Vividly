@@ -1,0 +1,65 @@
+{
+    "men":[
+        {
+            "id":1,
+            "brand":"Levis",
+            "description":"Men Burgundy & Mustard Yellow Slim Fit Checked Casual Shirt",
+            "image":"https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/13358594/2021/1/28/933977c9-0303-4c41-b0e2-f7dd19bf720a1611827180991-Levis-Men-Shirts-8471611827178183-1.jpg",
+            "carousalimages":[
+                "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/13358594/2021/1/28/933977c9-0303-4c41-b0e2-f7dd19bf720a1611827180991-Levis-Men-Shirts-8471611827178183-1.jpg",
+                "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/13358594/2021/1/28/af46a5e4-f2f7-45ac-90cc-124bff53acb01611827180913-Levis-Men-Shirts-8471611827178183-5.jpg",
+                "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/13358594/2021/1/28/c7318c4f-2add-4de5-9797-6d9b10b4ee641611827180899-Levis-Men-Shirts-8471611827178183-6.jpg"
+            ],
+            "price":"1679/-",
+            "features":[
+              "Spread collar",
+              "Long sleeves",
+              "1 Patch pocket",
+              "Slim fit",
+              "100% Cotton",
+              "Machine Wash",
+              "Product Code: 13358594"
+            ] 
+        },
+        {
+            "id":2,
+            "brand":"WROGN",
+            "description":"Men Burgundy & Black Slim Fit Checked Casual Shirt",
+            "image":"https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10410142/2019/10/21/935c4612-9355-49ee-9928-a1f4803243ca1571662078278-WROGN-Men-Burgundy--Black-Slim-Fit-Checked-Casual-Shirt-8015-1.jpg",
+            "price":"1319/-",
+            "features":[
+                "Spread collar",
+                "Long sleeves",
+                "1 Patch pocket",
+                "Slim fit",
+                "100% Cotton",
+                "Machine Wash",
+                "Product Code: 13358594"
+
+              ]
+             
+        }
+          
+    ],
+
+    "women":[
+        {
+            "id":1,
+            "brand":"Miss Chase",
+            "description":"Women Black Solid Fit and Flare Dress",
+            "image":"https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/productimage/2018/11/23/b7a2fc6c-cb82-4bf5-8c93-4ecae6ac8c161542966081867-1.jpg",
+            "price":"1499/-"
+             
+        },
+        {
+            "id":2,
+            "brand":"Athena",
+            "description":"Women Burgundy Lace Maxi Dress",
+            "image":"https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/7409159/2018/9/21/1097e02c-6780-47e5-93b5-db2aff05e2d41537516149860-Athena-Women-Burgundy-Self-Design-Maxi-Dress-9671537516149722-1.jpg",
+            "price":"1399/-"
+             
+        }
+          
+    ]
+
+}

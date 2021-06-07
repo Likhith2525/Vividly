@@ -1,0 +1,16 @@
+.active{
+    font-weight:bold;
+    border-bottom: 2px solid red;
+    border-radius: 0px;
+}
+span{
+    font-size: 35px;
+}
+
+.navbar{
+    background-color: rgb(6, 34, 34);
+}
+
+.fa-shopping-bag{
+    font-size:22px;
+}
