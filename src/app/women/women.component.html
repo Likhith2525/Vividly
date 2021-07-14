@@ -1,8 +1,9 @@
-<h1 class="text-danger text-center  ">WOMEN</h1>
-<div class="row row-cols-s-1 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mt-4 mb-4 container">
+<div class="container">
+ <h1 class="text-danger text-center  ">WOMEN</h1>
+ <div class="row row-cols-s-1 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mt-4 mb-4 ">
  <div class="col" *ngFor="let womenObj of women">
-        <div class="card bg-light" (click)="onClick(womenObj.id)">
-           <img src={{womenObj.image}} class="card-img-top" height="290px" alt="...">
+        <div class="card bg-light" >
+           <img src={{womenObj.image}} class="card-img-top" height="290px" alt="..." (click)="onClick(womenObj.id)">
           <div class="card-body">
            <h5 class="card-title mt-2">{{womenObj.brand}}</h5>
            <h6 class="text-secondary description">{{womenObj.description}}</h6>
@@ -11,4 +12,5 @@
           </div>
         </div>
     </div>
+ </div>
 </div>

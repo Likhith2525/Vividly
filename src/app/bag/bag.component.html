@@ -1,0 +1,15 @@
+<h4 class="text-end text-secondary">Welcome, <span style="color:#1e5a7f">{{userObj.username}}<h6>{{userObj.email}}</h6></span></h4>
+
+<div *ngFor="let p of products" class="container">
+    <div class="row">
+        <div class="col-4">
+            <img src="{{p.image}}" alt="" height="400px">
+        </div>
+        <div class="col-8">
+            <h2>{{p.brand}}</h2>
+            <h4>{{p.description}}</h4>
+            <h3>{{p.price}}</h3>
+        </div>
+    </div>
+
+</div>

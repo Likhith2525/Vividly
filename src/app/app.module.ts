@@ -9,6 +9,10 @@ import { WomendetailsComponent } from './womendetails/womendetails.component';
 import { MendetailsComponent } from './mendetails/mendetails.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HomeComponent } from './home/home.component';
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from "@angular/forms";
+import { BagComponent } from './bag/bag.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +22,16 @@ import { HomeComponent } from './home/home.component';
     WomendetailsComponent,
     MendetailsComponent,
     ContactusComponent,
-    HomeComponent
+    HomeComponent,
+    SignupComponent,
+    LoginComponent,
+    BagComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

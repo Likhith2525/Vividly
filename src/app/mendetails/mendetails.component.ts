@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductdetailsService } from '../productdetails.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-mendetails',
@@ -12,7 +13,7 @@ export class MendetailsComponent implements OnInit {
   proddetails:any;
   status:boolean=true;
    
-  constructor(private ar:ActivatedRoute,private pdObj:ProductdetailsService) { }
+  constructor(private ar:ActivatedRoute,private pdObj:ProductdetailsService,private userService:UserService) { }
 
   ngOnInit(){
 
@@ -32,4 +33,27 @@ export class MendetailsComponent implements OnInit {
     this.status=!this.status;
   }
 
+  
+  //product selected by user
+  onProductSelect(productObject){
+
+    //console.log(productObject)
+    let username=localStorage.getItem("username")
+
+    let newUserProductObj={username,productObject}
+
+    console.log(newUserProductObj)
+
+   this.userService.sendProductToUserCart(newUserProductObj).subscribe(
+     res=>{
+       alert(res['message'])
+       this.userService.updateDataObservable(res.latestCartObj)
+     },
+     err=>{
+       console.log("err in posting product to cart ",err)
+       alert("Something wrong in adding product to cart...")
+     }
+   )
+
+  }
 }

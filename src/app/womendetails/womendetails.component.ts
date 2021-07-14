@@ -10,6 +10,7 @@ import { ProductdetailsService } from '../productdetails.service';
 export class WomendetailsComponent implements OnInit {
 
   proddetails:any;
+  status:boolean=true;
   constructor(private ar:ActivatedRoute,private pdObj:ProductdetailsService) { }
 
   ngOnInit(): void {
@@ -24,6 +25,10 @@ export class WomendetailsComponent implements OnInit {
         console.log("Error in getting data is",err)
       }
   )
+  }
+
+  change(){
+    this.status=!this.status;
   }
 
 }
