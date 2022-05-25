@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-kids',
@@ -11,13 +12,15 @@ export class KidsComponent implements OnInit {
 
   men=[];
   searchTerm:string;
+  mensize: string;
+  
 
-  constructor(private router:Router,private dsObj:DataService) { }
+  constructor(private router:Router,private dsObj:DataService,private userService:UserService) { }
 
   ngOnInit() {
     this.dsObj.getKidsData().subscribe(
       data=>{
-        this.men=data;
+        this.men=data.message;
 
       },
       err=>{
@@ -31,5 +34,6 @@ export class KidsComponent implements OnInit {
     this.router.navigateByUrl('kids/'+id)
   }
 
+  
 
 }

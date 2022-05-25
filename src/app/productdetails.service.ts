@@ -10,12 +10,16 @@ export class ProductdetailsService {
   constructor(private hc:HttpClient) { }
 
 
-  getMenDataById(id):Observable<any>{
-     return this.hc.get('http://localhost:3000/men/'+id)
+  getMenDataById(id:any):Observable<any>{
+     return this.hc.get(`/user/menproductsbyid/${id}`)
   }
 
   getWomenDataById(id):Observable<any>{
-    return this.hc.get('http://localhost:3000/women/'+id)
+    return this.hc.get(`/user/womenproductsbyid/${id}`)
  }
  
+ getKidsDataById(id):Observable<any>{
+  return this.hc.get(`/user/kidsproductsbyid/${id}`)
+}
+
 }

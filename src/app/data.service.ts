@@ -11,19 +11,19 @@ export class DataService {
 
   getMenData():Observable<any>{
 
-    return this.hc.get<any>("http://localhost:3000/men")
+    return this.hc.get<any>('/user/getmen')
 
   }  
 
   getWomenData():Observable<any>{
 
-    return this.hc.get<any>("http://localhost:3000/women")
+    return this.hc.get<any>('/user/getwomen')
     
   }  
 
   getKidsData():Observable<any>{
 
-    return this.hc.get<any>("http://localhost:3000/kids")
+    return this.hc.get<any>('/user/getkids')
 
   }  
 }

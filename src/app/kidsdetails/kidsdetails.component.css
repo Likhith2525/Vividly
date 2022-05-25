@@ -1,0 +1,38 @@
+
+
+.btn{
+    background-color: #d5a249;
+    width:250px;
+}
+
+.ul{
+    color:#406786;
+}
+
+#text{
+    font-size: small;
+    color: grey;
+}
+
+.button{
+    text-decoration: none;
+    color:black;
+    border: 1px solid black;
+}
+
+
+.button:hover{
+    border: 2px solid rgb(150, 12, 35);
+    cursor: pointer;
+}
+
+
+
+
+input{
+
+    padding: 8px;
+}
+label{
+    cursor: pointer;
+}

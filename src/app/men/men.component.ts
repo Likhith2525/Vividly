@@ -16,8 +16,8 @@ export class MenComponent implements OnInit {
   ngOnInit() {
     this.dsObj.getMenData().subscribe(
       data=>{
-        this.men=data;
-
+        this.men=data.message;
+             console.log(this.men)
       },
       err=>{
         console.log("ERROR is",err);

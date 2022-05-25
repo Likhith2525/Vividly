@@ -16,7 +16,7 @@ export class WomenComponent implements OnInit {
   ngOnInit() {
     this.dsObj.getWomenData().subscribe(
       data=>{
-        this.women=data;
+        this.women=data.message;
 
       },
       err=>{

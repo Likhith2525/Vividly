@@ -25,7 +25,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'bag',component:BagComponent},
 
-
+{path:'',redirectTo:'/login',pathMatch:'full'}
 
 
 ];

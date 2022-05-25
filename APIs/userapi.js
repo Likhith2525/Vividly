@@ -3,12 +3,13 @@ const exp=require("express")
 const userApi=exp.Router();
 const expressErrorHandler=require("express-async-handler")
 const bcryptjs=require("bcryptjs")
-const jwt=require("jsonwebtoken")
+const jwt=require("jsonwebtoken");
+const { response } = require("express");
 
 //add body parser middleware
 userApi.use(exp.json())
 
-
+require("dotenv").config()
 
 //get users using async await
 userApi.get('/getusers',expressErrorHandler(async (req,res)=>{
@@ -16,6 +17,85 @@ userApi.get('/getusers',expressErrorHandler(async (req,res)=>{
     let userList=await userCollectionObj.find().toArray()
     res.send({message:userList})
 }))
+
+userApi.get('/getmen',expressErrorHandler(async (req,res)=>{
+    let menproductCollectionObj = req.app.get("menproductCollectionObj")
+    let userList=await menproductCollectionObj.find().toArray()
+   // console.log(userList)
+    res.send({message:userList})
+}))
+
+userApi.get('/getwomen',expressErrorHandler(async (req,res)=>{
+    let womenproductCollectionObj = req.app.get("womenproductCollectionObj")
+    let userList=await womenproductCollectionObj.find().toArray()
+    //console.log(userList)
+    res.send({message:userList})
+}))
+
+
+userApi.get('/getkids',expressErrorHandler(async (req,res)=>{
+    let kidsproductCollectionObj = req.app.get("kidsproductCollectionObj")
+    let userList=await kidsproductCollectionObj.find().toArray()
+    //console.log(userList)
+    res.send({message:userList})
+}))
+
+userApi.get('/menproductsbyid/:id',expressErrorHandler(async (req,res)=>{
+    let menproductCollectionObj = req.app.get("menproductCollectionObj")
+    let un=req.params.id;
+    //console.log(un)
+    //search 
+    let userObj=await menproductCollectionObj.find().toArray()
+    //console.log(userObj[0].id)
+    for(let i in userObj){
+        let obj=userObj[i];
+        //console.log(obj.id==un)
+        if(obj.id==un){
+            //console.log(obj)
+            res.send({message:obj})
+            break
+        }
+    }
+}))
+
+
+userApi.get('/womenproductsbyid/:id',expressErrorHandler(async (req,res)=>{
+    let womenproductCollectionObj = req.app.get("womenproductCollectionObj")
+    let un=req.params.id;
+    //console.log(un)
+    //search 
+    let userObj=await womenproductCollectionObj.find().toArray()
+    //console.log(userObj[0].id)
+    for(let i in userObj){
+        let obj=userObj[i];
+        //console.log(obj.id==un)
+        if(obj.id==un){
+            //console.log(obj)
+            res.send({message:obj})
+            break
+        }
+    }
+}))
+
+
+userApi.get('/kidsproductsbyid/:id',expressErrorHandler(async (req,res)=>{
+    let kidsproductCollectionObj = req.app.get("kidsproductCollectionObj")
+    let un=req.params.id;
+    //console.log(un)
+    //search 
+    let userObj=await kidsproductCollectionObj.find().toArray()
+    //console.log(userObj[0].id)
+    for(let i in userObj){
+        let obj=userObj[i];
+        //console.log(obj.id==un)
+        if(obj.id==un){
+            //console.log(obj)
+            res.send({message:obj})
+            break
+        }
+    }
+}))
+
 
 
 
@@ -104,7 +184,7 @@ userApi.post('/login', expressErrorHandler(async (req, res) => {
         }
         else {
             //create a token
-            let signedToken = jwt.sign({ username: credentials.username },'abcd', { expiresIn: 10 })
+            let signedToken = jwt.sign({ username: credentials.username },process.env.SECRET, { expiresIn: 10 })
             //send token to client
             res.send({ message: "login success", token: signedToken, username: credentials.username, userObj: user })
         }
@@ -127,7 +207,7 @@ userApi.post("/add-to-cart", expressErrorHandler(async (req, res, next) => {
     let userCartObj = await userCartCollectionObject.findOne({username:newProdObject.username})
 
     //console.log(userCartObj)
-
+    
     //if userCartObj is not existed
     if (userCartObj === undefined) {
 

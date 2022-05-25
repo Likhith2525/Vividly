@@ -20,17 +20,22 @@ export class MendetailsComponent implements OnInit {
   bgcolor4 = "white";
   bgcolor5 = "white";
   
+  check:boolean=true;
 
 
   constructor(private ar: ActivatedRoute, private pdObj: ProductdetailsService, private userService: UserService) { }
 
   ngOnInit() {
 
+    if(localStorage.getItem('username')===null){
+      this.check=false;
+    }
     let id = this.ar.snapshot.params.id;
+    //console.log(id)
     this.pdObj.getMenDataById(id).subscribe(
       data => {
-        
-        this.proddetails = data;
+        console.log(data);
+        this.proddetails = data.message;
       },
       err => {
         console.log("Error in getting data is", err)
@@ -72,12 +77,12 @@ export class MendetailsComponent implements OnInit {
   
   //product selected by user
   onProductSelect(productObject) {
-
+    
     productObject["size"] = this.mensize;
 
     //console.log(productObject)
     let username = localStorage.getItem("username")
-
+    if(username!=null && this.mensize!=null ){
     let newUserProductObj = { username, productObject }
 
    
@@ -92,6 +97,13 @@ export class MendetailsComponent implements OnInit {
         alert("Something wrong in adding product to cart...")
       }
     )
+    }
+    else if(this.mensize==null){
+      alert("Please select size !!")
+    }
+    else{
+      alert("Please Login first !!")
+    }
 
   }
 }
