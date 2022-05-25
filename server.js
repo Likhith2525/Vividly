@@ -3,6 +3,10 @@ const exp=require("express")
 const app=exp();
 const path=require("path")
 
+//connect angular app with express server
+app.use(exp.static(path.join(__dirname,"./dist/MyProject1/")))
+
+
 //import mongoclient
 const mc=require("mongodb").MongoClient;
 

@@ -16,17 +16,18 @@
 
 .button{
     text-decoration: none;
-
-    color: black;
+    color:black;
     border: 1px solid black;
-
 }
+
 
 .button:hover{
-    background-color:rgb(6, 34, 34);
-    color: white;
+    border: 2px solid rgb(150, 12, 35);
     cursor: pointer;
 }
+
+
+
 
 input{
 
