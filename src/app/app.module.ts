@@ -16,6 +16,7 @@ import { BagComponent } from './bag/bag.component';
 import { KidsComponent } from './kids/kids.component';
 import { KidsdetailsComponent } from './kidsdetails/kidsdetails.component';
 import { SearchPipe } from './search.pipe';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SearchPipe } from './search.pipe';
     BagComponent,
     KidsComponent,
     KidsdetailsComponent,
-    SearchPipe
+    SearchPipe,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

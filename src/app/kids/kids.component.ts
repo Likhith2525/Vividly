@@ -13,14 +13,17 @@ export class KidsComponent implements OnInit {
   men=[];
   searchTerm:string;
   mensize: string;
-  
+  load:any;
 
   constructor(private router:Router,private dsObj:DataService,private userService:UserService) { }
 
   ngOnInit() {
+    this.load=true;
+
     this.dsObj.getKidsData().subscribe(
       data=>{
         this.men=data.message;
+        this.load=false;
 
       },
       err=>{

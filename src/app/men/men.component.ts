@@ -10,14 +10,17 @@ import { DataService } from '../data.service';
 export class MenComponent implements OnInit {
 
   men=[];
+  load:any;
   searchTerm:string;
   constructor(private router:Router,private dsObj:DataService) { }
 
   ngOnInit() {
+    this.load=true;
     this.dsObj.getMenData().subscribe(
       data=>{
         this.men=data.message;
-             console.log(this.men)
+        this.load=false;
+        //console.log(this.men)
       },
       err=>{
         console.log("ERROR is",err);

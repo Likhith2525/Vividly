@@ -10,13 +10,17 @@ import { DataService } from '../data.service';
 export class WomenComponent implements OnInit {
   women=[];
   searchTerm:string;
+  load:any;
 
   constructor(private router:Router,private dsObj:DataService) { }
 
   ngOnInit() {
+    this.load=true;
     this.dsObj.getWomenData().subscribe(
       data=>{
+
         this.women=data.message;
+        this.load=false;
 
       },
       err=>{
