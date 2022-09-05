@@ -1,6 +1,6 @@
 {
   "name": "my-project1",
-  "version": "16.14.0",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
@@ -23,7 +23,7 @@
     "dotenv": "^16.0.1",
     "express": "^4.17.3",
     "express-async-handler": "^1.1.4",
-    "heroku": "^7.60.2",
+    "heroku": "^7.63.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.0.0",
     "node-modules": "^1.0.1",
